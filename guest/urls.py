@@ -26,5 +26,5 @@ urlpatterns = [
     url(r'^event_manage/$', views.event_manage),
     url(r'^sreach_name/$', views.sreach_name),
     url(r'^guest_manage/$', views.guest_manage),
-    url(r'^sreach_realname/$', views.sreach_realname),
+    url(r'^sreach_phone/$', views.sreach_phone),
 ]

@@ -54,10 +54,11 @@ def guest_manage(request):
     return render(request, "guest_manage.html", {"user": username, "guests": guest_list})
 
 
-# 嘉宾名称搜索
+# 嘉宾手机号搜索
 @login_required()
-def sreach_realname(request):
+def sreach_phone(request):
     username = request.session.get('user', '')
-    sreach_realname = request.GET.get('realname', "")
-    event_list = Guest.objects.filter(name__contains=sreach_realname)
-    return render(request, "guest_manage.html", {"user": username, "events": event_list})
+    sreach_phone = request.GET.get('phone', "")
+    sreach_name_bytes = sreach_phone.encode(encoding="utf-8")
+    guest_list = Guest.objects.filter(phone__contains=sreach_name_bytes)
+    return render(request, "guest_manage.html", {"user": username, "guests": guest_list})
