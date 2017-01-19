@@ -10,7 +10,7 @@
 <body role="document">
 <!-- 导航栏 -->
 <nav class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container-fulid">
+      <div class="container-fluid">
         <div class="navbar-header">
           <a class="navbar-brand" href="/event_manage/">Guest Manage System</a>
         </div>
@@ -45,21 +45,23 @@
         <table class="table table-striped">
             <thead>
               <tr>
-                <th>id</th>
-                <th>名称</th>
-                <th>状态</th>
-                <th>地址</th>
-                <th>时间</th>
+                  <th>id</th>
+                  <th>名称</th>
+                  <th>状态</th>
+                  <th>地址</th>
+                  <th>时间</th>
+                  <th>签到</th>
               </tr>
             </thead>
             <tbody>
               {% for event in events %}
                 <tr>
-                  <td>{{ event.id }}</td>
-                  <td>{{ event.name }}</td>
-                  <td>{{ event.status }}</td>
-                  <td>{{ event.address }}</td>
-                  <td>{{ event.start_time }}</td>
+                    <td>{{ event.id }}</td>
+                    <td>{{ event.name }}</td>
+                    <td>{{ event.status }}</td>
+                    <td>{{ event.address }}</td>
+                    <td>{{ event.start_time }}</td>
+                    <td><a href="/sign_index/{{ event.id }}/" target="{{ event.id }}_black">sign</a></td>
                 </tr>
              {% endfor %}
             </tbody>
